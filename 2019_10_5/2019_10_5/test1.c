@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int Js(int n, int k)
+int Js(int n)
 {
-	if (k > 1)
-		return n * Js(n, k - 1);
+	if (n > 1)
+		return n * Js(n-1);
 	else
 		return n;
 }
@@ -15,8 +15,8 @@ int main()
 	int k = 0;
 	int sum = 0;
 	printf("Input the number:");
-	scanf("%d %d", &n, &k);
-	sum = Js(n, k);
+	scanf("%d", &n);
+	sum = Js(n);
 	printf("%d\n", sum);
 	system("pause");
 	return 0;

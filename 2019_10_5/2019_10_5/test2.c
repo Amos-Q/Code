@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Js(int n, int k)
+void Js(int n)
 {
 	int i = 0;
-	int sum = n;
-	for (i = 1; i < k; i++)
-		sum *= n;
+	int sum = 1;
+	for (i = 1; i <= n; i++)
+		sum *= i;
 	printf("%d\n", sum);
 }
 int main()
@@ -15,8 +15,8 @@ int main()
 	int n = 0;
 	int k = 0;
 	printf("Input the number:");
-	scanf("%d %d", &n, &k);
-	Js(n, k);
+	scanf("%d", &n);
+	Js(n);
 	system("pause");
 	return 0;
 }
