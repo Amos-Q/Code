@@ -1,0 +1,8 @@
+﻿  test.c
+e:\product\code\2019_11_18\2019_11_18\test.c(81): warning C4047: “函数”:“void **”与“int [10]”的间接级别不同
+e:\product\code\2019_11_18\2019_11_18\test.c(81): warning C4022: “my_qsort”: 指针与实参 1 不匹配
+e:\product\code\2019_11_18\2019_11_18\test.c(87): warning C4047: “函数”:“void **”与“char [10]”的间接级别不同
+e:\product\code\2019_11_18\2019_11_18\test.c(87): warning C4022: “my_qsort”: 指针与实参 1 不匹配
+e:\product\code\2019_11_18\2019_11_18\test.c(93): warning C4047: “函数”:“void **”与“double [10]”的间接级别不同
+e:\product\code\2019_11_18\2019_11_18\test.c(93): warning C4022: “my_qsort”: 指针与实参 1 不匹配
+  2019_11_18.vcxproj -> E:\Product\Code\2019_11_18\Debug\2019_11_18.exe
