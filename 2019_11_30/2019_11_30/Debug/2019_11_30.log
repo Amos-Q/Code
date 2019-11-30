@@ -1,0 +1,105 @@
+﻿  test.c
+e:\product\code\2019_11_30\2019_11_30\test.c(4): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+e:\product\code\2019_11_30\2019_11_30\test.c(17): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(17): error C2061: 语法错误: 标识符“ ”
+e:\product\code\2019_11_30\2019_11_30\test.c(18): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(18): error C2061: 语法错误: 标识符“ ”
+e:\product\code\2019_11_30\2019_11_30\test.c(18): error C2059: 语法错误:“;”
+e:\product\code\2019_11_30\2019_11_30\test.c(19): error C2054: 在“ ”之后应输入“(”
+e:\product\code\2019_11_30\2019_11_30\test.c(19): error C2085: “Serve_Time”: 不在形参表中
+e:\product\code\2019_11_30\2019_11_30\test.c(19): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(19): error C2061: 语法错误: 标识符“ ”
+e:\product\code\2019_11_30\2019_11_30\test.c(21): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(21): error C2061: 语法错误: 标识符“ ”
+e:\product\code\2019_11_30\2019_11_30\test.c(21): error C2059: 语法错误:“;”
+e:\product\code\2019_11_30\2019_11_30\test.c(22): error C2059: 语法错误:“}”
+e:\product\code\2019_11_30\2019_11_30\test.c(27): error C3872: “0xa0”: 此字符不允许在标识符中使用
+e:\product\code\2019_11_30\2019_11_30\test.c(27): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(27): error C2061: 语法错误: 标识符“ ”
+e:\product\code\2019_11_30\2019_11_30\test.c(27): error C2059: 语法错误:“;”
+e:\product\code\2019_11_30\2019_11_30\test.c(28): error C2054: 在“ ”之后应输入“(”
+e:\product\code\2019_11_30\2019_11_30\test.c(34): error C3872: “0xa0”: 此字符不允许在标识符中使用
+e:\product\code\2019_11_30\2019_11_30\test.c(34): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(34): error C2061: 语法错误: 标识符“ ”
+e:\product\code\2019_11_30\2019_11_30\test.c(34): error C2059: 语法错误:“;”
+e:\product\code\2019_11_30\2019_11_30\test.c(35): error C2054: 在“ ”之后应输入“(”
+e:\product\code\2019_11_30\2019_11_30\test.c(37): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(38): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(39): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(43): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(43): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(43): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(43): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(43): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(74): error C2146: 语法错误: 缺少“)”(在标识符“L”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(74): error C2061: 语法错误: 标识符“L”
+e:\product\code\2019_11_30\2019_11_30\test.c(74): error C2059: 语法错误:“;”
+e:\product\code\2019_11_30\2019_11_30\test.c(74): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(74): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(74): error C2061: 语法错误: 标识符“ ”
+e:\product\code\2019_11_30\2019_11_30\test.c(75): error C2449: 在文件范围内找到“{”(是否缺少函数头?)
+e:\product\code\2019_11_30\2019_11_30\test.c(85): warning C4566: 由通用字符名称“\u00A0”表示的字符不能在当前代码页(936)中表示出来
+e:\product\code\2019_11_30\2019_11_30\test.c(89): error C2059: 语法错误:“}”
+e:\product\code\2019_11_30\2019_11_30\test.c(91): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(97): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(115): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(115): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(115): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(115): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(115): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(129): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(129): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(129): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(129): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(129): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(139): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(139): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(139): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(139): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(172): error C2061: 语法错误: 标识符“Min”
+e:\product\code\2019_11_30\2019_11_30\test.c(172): error C2059: 语法错误:“;”
+e:\product\code\2019_11_30\2019_11_30\test.c(172): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(172): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(172): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(172): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(172): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(175): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(186): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(195): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(199): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(199): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(199): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(199): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(199): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(206): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(208): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(221): error C3872: “0xa0”: 此字符不允许在标识符中使用
+e:\product\code\2019_11_30\2019_11_30\test.c(221): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(245): error C2061: 语法错误: 标识符“Max_Priority”
+e:\product\code\2019_11_30\2019_11_30\test.c(245): error C2059: 语法错误:“;”
+e:\product\code\2019_11_30\2019_11_30\test.c(245): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(245): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(245): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(245): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(245): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(272): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(272): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(272): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(272): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(272): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(318): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(318): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(318): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(318): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(324): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(326): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(338): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(353): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+e:\product\code\2019_11_30\2019_11_30\test.c(371): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(371): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(371): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(371): error C2059: 语法错误:“)”
+e:\product\code\2019_11_30\2019_11_30\test.c(378): error C2143: 语法错误: 缺少“)”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(378): error C2143: 语法错误: 缺少“{”(在“&”的前面)
+e:\product\code\2019_11_30\2019_11_30\test.c(378): error C2059: 语法错误:“&”
+e:\product\code\2019_11_30\2019_11_30\test.c(378): fatal error C1003: 错误计数超过 100；正在停止编译
