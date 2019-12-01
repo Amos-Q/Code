@@ -43,7 +43,7 @@ void display(struct Node job[10],int num)
 	} while (ch != 5);
 }
 
-void Arrive_Short_sort(struct Node job[10], int num)//到达时间从小到大排序
+void Arrive_sort(struct Node job[10], int num)//到达时间从小到大排序
 {
 	int temp1, temp2, temp3;
 	for (int i = 0; i < num; i++)
@@ -105,17 +105,41 @@ void sjf(struct Node job[10], int num)//短作业优先
 {
 	int i = 0;
 	int faile = 0;
-	while(num)
+	char temp1 = 0;
+	int temp2 = 0;
+	int temp3 = 0;
+	for (i = 0; i < num;)
 	{
-		static i = 1;
-		if (job[i].Tstart < job[i - 1].Taccomplish)
+		job[0].Taccomplish = job[0].Tservice;
+		if (job[i].Tarrive <= job[i - 1].Taccomplish)
 		{
-			job[i].Taccomplish = job[i].Tarrive + job[i].Tservice;
-			i++;
-			num--;
+			job[i].Taccomplish = job[i - 1].Taccomplish + job[i].Tservice;
 		}
 		else
-			faile = i;
+		{
+			faile = i+1;
+			for (; faile < num; faile++)
+			{
+				if (job[faile].Tarrive <= job[i - 1].Taccomplish)
+				{
+					temp1 = job[faile].name;
+					temp2 = job[faile].Tarrive;
+					temp3 = job[faile].Tservice;
+					for (faile; faile > i;faile--)
+					{
+						job[faile].name = job[faile - 1].name;
+						job[faile].Tarrive = job[faile - 1].Tarrive;
+						job[faile].Tservice = job[faile - 1].Tservice;
+					}
+					job[i].name = temp1;
+					job[i].Tarrive = temp2;
+					job[i].Tservice = temp3;
+					job[i].Taccomplish = job[i - 1].Taccomplish + job[i].Tservice;
+					break;
+				}
+			}
+		}
+		i++;
 	}
 }
 
@@ -197,7 +221,10 @@ void Priority_sort(struct Node job[10], int num)//非抢占优先级算法
 	{
 		scanf("%d", &job[i].prio);
 	}
-	int temp1, temp2, temp3, temp4;
+	char temp1 = 0;
+	int temp2 = 0;
+	int temp3 = 0;
+	int temp4 = 0;
 	for (i = 1; i < num; i++)
 	{
 		for (int j = i + 1; j < num; j++)
@@ -215,7 +242,7 @@ void Priority_sort(struct Node job[10], int num)//非抢占优先级算法
 				job[i].Tservice = temp3;
 				temp4 = job[j].prio;
 				job[j].prio = job[i].prio;
-				job[i].prio = temp3;
+				job[i].prio = temp4;
 			}
 		}
 	}

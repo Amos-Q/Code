@@ -20,6 +20,5 @@ void sjf(struct Node job[10], int num);
 void Arrive_sort(struct Node job[10], int num);
 void Service_sort(struct Node job[10], int num);
 void Priority_sort(struct Node job[10], int num);
-void Arrive_Short_sort(struct Node job[10], int num);
 void fcfs(struct Node job[10], int num);
 void print(struct Node job[10], int num);
