@@ -66,3 +66,35 @@ void rotate(int* nums, int numsSize, int k) {
 	memcpy(nums, ret, sizeof(int)*numsSize);
 	return;
 }
+
+int* addToArrayForm(int* A, int ASize, int K, int* returnSize) {
+	int m = ASize;
+	int* res = (int*)malloc(sizeof(int)*(m + 5));
+	int t = 0;
+	for (int i = 0; i < m / 2; i++)
+	{
+		int tmp = A[i];
+		A[i] = A[m - 1 - i];
+		A[m - 1 - i] = tmp;
+	}
+	for (int i = 0; i < m; i++)
+	{
+		K += A[i];
+		res[t++] = K % 10;
+		K /= 10;
+
+	}
+	while (K)
+	{
+		res[t++] = K % 10;
+		K /= 10;
+	}
+	for (int i = 0; i < t / 2; i++)
+	{
+		int tmp = res[i];
+		res[i] = res[t - 1 - i];
+		res[t - 1 - i] = tmp;
+	}
+	*returnSize = t;
+	return res;
+}
