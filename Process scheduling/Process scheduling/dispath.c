@@ -4,13 +4,11 @@
 void display(struct Node job[10],int num)
 {
 	int ch = 0;
-	printf("—————————————————————————\n");
-	printf("——————————1、FCFS算法 —————————\n");
-	printf("——————————2、SJF算法——————————\n");
-	printf("——————————3、RR算法 ——————————\n");
-	printf("——————————4、优先级算法 ————————\n");
-	printf("——————————5、退出 ———————————\n");
-	printf("—————————————————————————\n");
+	printf("1、FCFS算法\n");
+	printf("2、SJF算法\n");
+	printf("3、RR算法\n");
+	printf("4、优先级算法\n");
+	printf("5、退出\n");
 	do {
 		printf("请选择:");
 		scanf("%d", &ch);
@@ -29,7 +27,6 @@ void display(struct Node job[10],int num)
 			RR(job,num);
 			break;
 		case 4:
-			Arrive_sort(job, num);
 			Priority_sort(job, num);
 			print(job, num);
 			break;
@@ -143,26 +140,25 @@ void sjf(struct Node job[10], int num)//短作业优先
 	}
 }
 
-
 void RR(struct Node job[10], int num)//RR算法
 {
 	int q;
 	printf("请输入时间片长度:");
 	scanf("%d", &q);
-	int flag = 1;//标志队列中是否还有进程
-	int finish_pro = 0;//完成的进程数
+	int flag = 1;
+	int finish_pro = 0;
 	printf("进程名称\t""开始时间\t""运行时间\t""剩余服务时间\t""结束时间\t\n");
-	int time;//记录当前时刻时间
+	int time;
 	int c = 0;
 	while (finish_pro < num)
 	{
-		flag = 0;//就绪队列里没进程
+		flag = 0;
 		for (int i = c; i < num; i++)
 		{
 			Arrive_sort(job, num);
 			job[i].Tsurplus = job[i].Tservice;
-			job[i].Tstart = job[i - 1].Taccomplish;//上一个作业结束时间
-			if (job[i].Tstart < job[i].Tarrive)//该作业的开始时间小于到达时间
+			job[i].Tstart = job[i - 1].Taccomplish;
+			if (job[i].Tstart < job[i].Tarrive)
 			{
 				job[i].Tstart = job[i].Tarrive;
 			}
@@ -171,10 +167,10 @@ void RR(struct Node job[10], int num)//RR算法
 				job[i].Tstart = job[i - 1].Taccomplish;
 			}
 			time = job[i].Tstart;
-			if (job[i].if_finish == 1) continue;//该进程已完成
+			if (job[i].if_finish == 1) continue;
 			else
 			{
-				if (job[i].Tsurplus <= q && time >= job[i].Tarrive)//未完成且少于一个时间片
+				if (job[i].Tsurplus <= q && time >= job[i].Tarrive)
 				{
 					flag = 1;
 					time = time + job[i].Tsurplus;
