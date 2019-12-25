@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-#define MAX_length 640 //最大内存空间为640KB
+#define MAX_length 1000 //最大内存空间为640KB
 
 #include<iostream>
 using namespace std;
@@ -303,14 +303,11 @@ bool alloc()
 {
 	block_follow = block_first;
 	int ch;//算法选择标记
-	cout << "       内存动态分区分配与回收       \n";
-	cout << "************************************\n";
-	cout << "** 1)首次适应算法 \n";
-	cout << "** 2)最佳适应算法 \n";
-	cout << "** 3)最坏适应算法 \n";
-	cout << "** 4)循环首次适应适应算法\n";
-	cout << "************************************\n";
-	cout << "请选择分配算法：";
+	cout << "1)首次适应算法 \n";
+	cout << "2)最佳适应算法 \n";
+	cout << "3)最坏适应算法 \n";
+	cout << "4)循环首次适应适应算法\n";
+	cout << "请选择分配算法\n";
 	cin >> ch;
 
 	int ID, request;
@@ -359,9 +356,7 @@ bool alloc()
 //---------------  显示主存分配情况 ------------------
 void show()
 {
-	cout << "+++++++++++++++++++++++++++++++++++++++\n";
-	cout << "+++        主 存 分 配 情 况        +++\n";
-	cout << "+++++++++++++++++++++++++++++++++++++++\n";
+	cout << "主 存 分 配 情 况\n";
 	Link *p = block_first->next;
 	while (p)
 	{
@@ -377,7 +372,6 @@ void show()
 			cout << "空  闲" << endl;
 		else
 			cout << "已分配" << endl;
-		cout << "——————————————" << endl;
 		p = p->next;
 	}
 }
@@ -386,10 +380,8 @@ int main()
 {
 	Initblock(); //开创空间表
 	int choice;  //操作选择标记
-	cout << "********************************************\n";
 	cout << "**    1: 分配内存        2: 回收内存      **\n";
 	cout << "**    3: 查看分配        0: 退    出      **\n";
-	cout << "********************************************\n";
 	do {
 		cout << "请输入您的操作 ：";
 		cin >> choice;
