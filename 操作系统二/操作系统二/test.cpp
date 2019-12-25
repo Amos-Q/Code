@@ -302,11 +302,10 @@ int main()
 	while (chooseAlgorithm)
 	{
 		cout << "请选择实现的算法：" << endl;
-		cout << "*****  1 - 首次适应算法     *****" << endl;
-		cout << "*****  2 - 循环首次适应算法 *****" << endl;
-		cout << "*****  3 - 最佳适应算法     *****" << endl;
-		cout << "*****  4 - 最坏适应算法     *****" << endl;
-		cout << "*****  0 - 结束             *****" << endl;
+		cout << "1 - 首次适应算法 " << endl;
+		cout << "2 - 循环首次适应算法 " << endl;
+		cout << "3 - 最佳适应算法 " << endl;
+		cout << "4 - 最坏适应算法" << endl;
 
 		cout << "chooseAlgorithm = ";
 		cin >> chooseAlgorithm;
