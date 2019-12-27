@@ -97,10 +97,19 @@ bool request(int Max[10][10], int process, int res[10], int Allocation[10][10], 
 							//如果安全检查成立，则请求成功，否则将分配回滚并返回失败
 							if (SafeCheck(Max, Allocation, Need, Available, safe, MAX_PROCESS, MAX_RESOURCE))
 							{
+								num = 0;
 								for (x = 0; x < MAX_RESOURCE; x++)
 								{
-									Available[x] += Allocation[process][x];
-									Allocation[process][x] = 0;
+									if(Need[process][x] == 0)
+										num++;
+									if (num == MAX_RESOURCE)
+									{
+										for (x = 0; x < MAX_RESOURCE; x++)
+										{
+											Available[x] += Allocation[process][x];
+											Allocation[process][x] = 0;
+										}
+									}
 								}
 								return true;
 							}
