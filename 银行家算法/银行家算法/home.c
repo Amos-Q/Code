@@ -96,12 +96,6 @@ int main()
 		{
 			printf("分配成功。\n");
 			PrintTable(Max, Allocation, Need, Available, MAX_PROCESS, MAX_RESOURCE);
-			printf("安全序列为:");
-			for (i = 0; i < MAX_PROCESS; i++)
-			{
-				printf("P%d ", safe[i]);
-			}
-			printf("\n");
 		}
 		else
 		{
