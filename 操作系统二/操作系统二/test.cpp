@@ -1,7 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-// 操作系统_实验四（动态分区分配算法）.cpp : 定义控制台应用程序的入口点。
-//
-
 #include <iostream>
 #include <fstream>
 #include <iomanip>
