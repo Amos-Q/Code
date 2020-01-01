@@ -1,29 +1,29 @@
-//#define _CRT_SECURE_NO_WARNINGS 1
-//#include<stdio.h>
-//#include<stdlib.h>  
-//#include <process.h>
-//
-//typedef struct node   //边表结点
-//{
-//	int adjvex;    //邻接点的编号
-//	int dut;   //弧
-//	struct node *next;   //下一个弧（指针）
-//}edgenode;  //边表结点
-//
-//typedef struct  //顶点表结点
-//{
-//	int projectname;//顶点域
-//	int id;//顶点的入度
-//	edgenode *link; //边表头指针
-//}vexnode;
-//
-//void CreateGraphic(vexnode * Graphicmap, int projectnumber,int activenumber)//创建图
-//{
-//	int begin, end, duttem, i, k; //弧的前节点，尾节点，活动持续时间
-//	edgenode *p;//  边表头指针
-//	for (i = 0; i < projectnumber; i++)
-//	{
-//		Graphicmap[i].projectname = i;//顶点的命名为0，1，2，3......
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>  
+#include <process.h>
+
+typedef struct node   //边表结点
+{
+	int adjvex;    //邻接点的编号
+	int dut;   //弧
+	struct node *next;   //下一个弧（指针）
+}edgenode;  //边表结点
+
+typedef struct  //顶点表结点
+{
+	int projectname;//顶点域
+	int id;//顶点的入度
+	edgenode *link; //边表头指针
+}vexnode;
+
+void CreateGraphic(vexnode * Graphicmap, int projectnumber,int activenumber)//创建图
+{
+	int begin, end, duttem, i, k; //弧的前节点，尾节点，活动持续时间
+	edgenode *p;//  边表头指针
+	for (i = 0; i < projectnumber; i++)
+	{
+		Graphicmap[i].projectname = i;//顶点的命名为0，1，2，3......
 //		Graphicmap[i].id = 0;//顶点的度数初始化为0
 //		Graphicmap[i].link = NULL;
 //	}
