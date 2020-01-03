@@ -105,4 +105,5 @@ int main()
 	printf("Ö´ĞĞÍê±Ï");
 	system("pause");
 	return 0;
+
 }
