@@ -100,12 +100,12 @@ bool Safe()    //安全性算法
 //	for (; i < 3; i++)
 //	{
 //		for (; y < 3; y++)
-//		{
-//			printf("%d %d %d", Max[3][3],Allocation[3][3],Need[3][3]);
-//		}
-//		printf("\n");
-//	}
-//}
+		{
+			printf("%d %d %d", Max[3][3],Allocation[3][3],Need[3][3]);
+		}
+		printf("\n");
+	}
+}
 
 
 void Bank()                //银行家算法  
