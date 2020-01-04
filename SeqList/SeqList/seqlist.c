@@ -7,10 +7,6 @@ void SeqListInit(SeqList* psl, size_t capacity)
 	psl->array = NULL;
 
 }
-void SeqListDestory(SeqList* psl)
-{
-
-}
 void SeqListPrint(SeqList* psl)
 void CheckCapacity(SeqList* psl)
 void SeqListPushBack(SeqList* psl, SLDataType x)
