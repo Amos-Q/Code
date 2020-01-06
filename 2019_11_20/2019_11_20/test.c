@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
 
-//128 64 32 16   8 4 2 1
+128 64 32 16   8 4 2 1
 //[][][[]       [][][][]
 //int main()
 //{
