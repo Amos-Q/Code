@@ -1,0 +1,4 @@
+﻿  test.c
+e:\product\code\2020_1_8\2020_1_8\test.c(49): warning C4101: “v”: 未引用的局部变量
+e:\product\code\2020_1_8\2020_1_8\test.c(49): warning C4101: “w”: 未引用的局部变量
+  2020_1_8.vcxproj -> E:\Product\Code\2020_1_8\Debug\2020_1_8.exe
