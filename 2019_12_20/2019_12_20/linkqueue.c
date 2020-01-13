@@ -85,7 +85,6 @@ void show_linkqueue(link_pqueue q)          //依次打印队头到队尾的数据
 	}
 	printf("\n");
 }
-
 void free_linkqueue(link_pqueue q)           //释放队列
 {
 	link_pqueue p;
