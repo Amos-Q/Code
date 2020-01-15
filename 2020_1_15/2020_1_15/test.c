@@ -52,7 +52,6 @@ boolean JudgeSafe() { //ÅĞ¶ÏÊÇ·ñ°²È«
 	}
 	else return false;
 }
-
 int main()
 {
 	system("pause");
