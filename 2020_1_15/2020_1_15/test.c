@@ -31,7 +31,6 @@ boolean JudgeSafe() { //判断是否安全
 			}
 		}
 	}
-
 	if (Finish[0] == true && Finish[1] == true && Finish[2] == true && Finish[3] == true && Finish[4] == true)
 	{
 		printf("Finish为0代表False，Finish为1代表True\n");
