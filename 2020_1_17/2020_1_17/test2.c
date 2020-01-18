@@ -5,6 +5,7 @@ typedef struct {
 	int rear;
 	int k
 } MyCircularQueue;
+
 /** Initialize your data structure here. Set the size of the queue to be k. */
 //创建一个可以存放k个元素的循环队列，实际申请的空间为k + 1
 MyCircularQueue* myCircularQueueCreate(int k) {
@@ -24,7 +25,6 @@ bool myCircularQueueEnQueue(MyCircularQueue* obj, int value) {
 	{
 		return false;
 	}
-	比特科技
 		//队尾入队
 		obj->queue[obj->rear++] = value;
 	//如果队尾越界，更新为最小值
@@ -33,6 +33,7 @@ bool myCircularQueueEnQueue(MyCircularQueue* obj, int value) {
 
 	return true;
 }
+
 /** Delete an element from the circular queue. Return true if the operation is successful.
 */
 bool myCircularQueueDeQueue(MyCircularQueue* obj) {
