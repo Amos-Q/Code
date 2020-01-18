@@ -13,11 +13,13 @@ MyQueue* myQueueCreate(int maxSize) {
 	StackInit(&pqueue->popST, maxSize);
 	return pqueue;
 }
+
 /** Push element x to the back of queue. */
 void myQueuePush(MyQueue* obj, int x) {
 	//入队栈进行入栈操作
 	StackPush(&obj->pushST, x);
 }
+
 /** Removes the element from in front of queue and returns that element. */
 int myQueuePop(MyQueue* obj) {
 	//如果出队栈为空，导入入队栈的元素
