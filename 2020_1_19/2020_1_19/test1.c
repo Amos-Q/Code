@@ -4,10 +4,6 @@
 #include<stdlib.h>
 typedef char USER_TYPE;
 #include "stack.h"
-void skipBlank(char *str);
-void getdeal(char *str);
-void dealalpha(char ch);
-void getout();
 PSeqStack *stack = NULL;
 void dealalpha(char ch)//前两个元素出栈运算,将运算结果入栈
 {
