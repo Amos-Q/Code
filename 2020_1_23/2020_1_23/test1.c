@@ -11,7 +11,7 @@ typedef struct
 	int front;//队头
 	int rear;//队尾
 }SqQueue;
-/*初始化*/
+
 int InitiQueue(SqQueue &Q)
 {
 	Q.data = (QElemType*)malloc(MAX * sizeof(QElemType));
