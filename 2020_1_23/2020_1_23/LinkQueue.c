@@ -1,6 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "LinkQueue.h"
-
 Status InitQueue(LinkQueue & Q)
 {
 	//构造一个空队列Q
@@ -9,7 +8,6 @@ Status InitQueue(LinkQueue & Q)
 	Q.front->next = NULL;
 	return OK;
 }
-
 Status DetroyQueue(LinkQueue & Q)
 {
 	//销毁一个队列
