@@ -21,7 +21,6 @@ void main()
 	cout << endl;
 }
 
-
 //#include < iostream >
 //using namespace std;
 //void print_triangle(char c, int n)
