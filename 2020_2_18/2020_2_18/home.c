@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"home.h"
 
-void login()//登录 
+void login() 
 {
 	//用户名和密码都是：123456 
 	char userName[15];
