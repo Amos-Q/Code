@@ -3,7 +3,6 @@
 #include<string.h>
 #include <stdlib.h>
 #define N sizeof(struct BOOK) //sizeof求字节数运算符 
-
 struct BOOK
 {
 	char name[20];//书名 
