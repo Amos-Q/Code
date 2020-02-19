@@ -1,0 +1,5 @@
+﻿  test1.c
+e:\product\code\2020_2_19\2020_2_19\test1.c(87): warning C4013: “malloc”未定义；假设外部返回 int
+e:\product\code\2020_2_19\2020_2_19\test1.c(94): warning C4013: “qsort”未定义；假设外部返回 int
+e:\product\code\2020_2_19\2020_2_19\test1.c(117): warning C4013: “system”未定义；假设外部返回 int
+  2020_2_19.vcxproj -> E:\Product\Code\2020_2_19\Debug\2020_2_19.exe
