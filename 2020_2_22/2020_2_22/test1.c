@@ -3,7 +3,6 @@
 #define false 0
 #define true 1
 #include <stdio.h>
-
 //bool isMatch(char * s, char * p) {
 //	int left1 = 0;
 //	int left2 = 0;
