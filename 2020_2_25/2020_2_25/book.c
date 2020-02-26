@@ -449,3 +449,144 @@ void shanchu()//删除图书信息
 	tsgxx();
 
 }
+void chaxunts()//查询函数
+
+{
+
+	FILE *fp;
+
+	char choose;
+
+	int txcl = 0, n = 0, k = 0, i, l;
+
+	float tprice = 0;
+
+	char tname[20] = { '\0' }, tauthor[20] = { '\0' }, chazhao[20] = { '\0' }, tchuban[20] = { '\0' },
+
+		tshuhao[20] = { '\0' }, tkind[20] = { '\0' };
+
+	if ((fp = fopen("library.txt", "r")) == NULL)//打开文件
+
+	{
+		system("cls");
+
+		printf("\n记录文件不存在!按任意键返回");
+
+		getch();
+
+		tsgxx();
+
+	}
+
+	l = tjzs();//获得文件个数
+
+	menu2();//调用菜单函数
+
+	scanf("%s", chazhao);
+
+	system("cls");
+
+	for (i = 0; i < l; i++)
+
+	{
+		fscanf(fp, "%s%s%s%s%s%d%f", tshuhao, tname, tauthor, tchuban, tkind, &txcl, &tprice);//读文件信息
+
+		if (!strcmp(chazhao, tshuhao) || !strcmp(chazhao, tname) || !strcmp(chazhao, tauthor) || !strcmp(chazhao, tkind))//输出查询信息
+
+		{
+			if (k == 0)
+
+			{
+
+				printf("查询结果:\n\n");
+
+				printf("书号\t书名\t作者\t\t出版社\t\t类别\t\t现存量\t单价\n");
+
+			}
+
+			printf("%-8s%-9s%-14s%-16s%-18s%-7d%-8.2f\n", tshuhao, tname, tauthor, tchuban, tkind, txcl, tprice);
+
+			k++;
+
+		}
+	}
+
+	if (k == 0)//文件夹为空则输出无记录
+
+	{
+		system("cls");
+
+		printf("\n无符合记录!\n");
+
+		getch();
+
+		tsgxx();
+
+	}
+
+	fclose(fp);
+
+	getch();//返回
+
+	tsgxx();
+
+}
+
+void xianshikucun()//现实库存信息
+
+{
+
+	FILE *fp;
+
+	int xcl = 0, n = 0, i = 0, j = 0;
+
+	float price = 0;
+
+	char name[20] = { '\0' }, author[20] = { '\0' }, kind[20] = { '\0' }, chuban[20] = { '\0' }, shuhao[20] = { '\0' };
+
+	if ((fp = fopen("library.txt", "r")) == NULL)//打开文件夹
+
+	{
+
+		system("cls");
+
+		printf("\n记录文件不存在!");
+
+	}
+
+	n = tjzs();
+
+	if (n == 0)
+
+	{
+		system("cls");
+
+		printf("\n无任何记录!");
+
+	}
+
+	fp = fopen("library.txt", "r");//打开只读文件
+
+	system("cls");
+
+	printf("书号\t书名\t作者\t\t出版社\t\t类别\t\t库存量\t单价\n");
+
+	for (i = 0; i < n; i++)//输出信息
+
+	{
+
+		fscanf(fp, "%s%s%s%s%s%d%f", shuhao, name, author, chuban, kind, &xcl, &price);
+
+		printf("%-8s%-9s%-14s%-16s%-18s%-7d%-8.2f\n", shuhao, name, author, chuban, kind, xcl, price);
+
+	}
+
+	fclose(fp);
+
+	printf("\n按任意键返回\n");
+
+	getch();//返回
+
+	tsgxx();
+
+}
