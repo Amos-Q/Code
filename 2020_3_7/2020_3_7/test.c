@@ -76,3 +76,48 @@ int main(void)
 
 	return 0;
 }
+
+//随机读取十个数字，从小到大排序
+
+#include <stdio.h>
+
+int main(void)
+{
+    srand(time(NULL));  //产生随机数种子。
+
+    int i;
+    int j;
+    int a[10]={0};
+
+    for(i=0;i<10;i++)
+    {
+        a[i]=rand()%100+1;
+    }
+
+    printf("before:");
+    for(i=0;i<10;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    printf("\n");
+
+    for(i=0;i<10;i++)         //排序
+    {
+        for(j=i;j<10;j++)
+        {
+            if(a[i]>a[j])
+            {
+                int tmp = a[i];
+                a[i]=a[j];
+                a[j]=tmp;
+            }
+        }
+    }
+    printf("after:");
+    for(i=0;i<10;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    printf("\n");
+    return 0;
+}
