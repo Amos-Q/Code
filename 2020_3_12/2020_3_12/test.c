@@ -46,5 +46,6 @@ void testTree()
 int main()
 {
 	testTree();
+	system("pause");
 	return 0;
 }
