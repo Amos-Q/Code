@@ -3,14 +3,16 @@
 #include <assert.h>
 #include <malloc.h>
 #include <stdlib.h>
-#include "BTree.h"
+#include "Btree.h"
 
 typedef BTNode* ElemType;//定义数据类型
+
 typedef struct sqQueue
 {
 	ElemType _data;
 	struct sqQueue* _next;
 }sqQueue;
+
 typedef struct Queue
 {
 	sqQueue* _front;
