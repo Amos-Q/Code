@@ -89,3 +89,41 @@ void insert_Sort(int a[], int n)
 		}
 	}
 }
+//第四种方法：快速排序   
+//快速排序的原理是选择一个数作为分界点，将小于他的数放到他的左边，大于他的数放到他的右边，然后分别对左右俩边的数进行同样方法的处理，得出结果
+
+void quick_Sort(int a[], int low, int high)
+{
+	int pos;
+	if (low < high)
+	{
+		//确定一个位置pos，pos左边的数都比pos位置上的数小，pos右边的数都比pos位置上的数大
+		pos = findpos(a, low, high);
+		quick_Sort(a, low, pos - 1);
+		quick_Sort(a, pos + 1, high);
+	}
+}
+
+//该方法的作用是返回一个位置值，使得该位置左边的数都比该位置上的数小，该位置右边的数都比该位置上的数大  
+
+int findpos(int a[], int low, int high)
+{
+	//假定数组中的数为49,38,65,13,50之后便于进行说明
+	//从数组中选择一个数作为分界点，该数为49
+	int val = a[low];
+	while (low < high)
+	{
+		//指针从high开始，将其值（即50）与val进行比较，若大于val，就移动high指针向前，再次比较，若小于val的值就将该值覆盖low指针位置处的值
+		while (low<high && a[high]>val)
+			high--;
+		a[low] = a[high];
+		//程序执行到这里后数列的排列顺序为13,38,65,13,50，此时low和high指针的位置并没有互换
+		//指针从low开始，将其值（即13）与val进行比较，若小于val，就移动low指针向后，再次比较，若大于val的值就将该值覆盖high指针位置处的值
+		while (low < high && a[low] < val)
+			low++;
+		a[high] = a[low];
+		//程序执行到这里后数列的排列顺序为13,38,65,65,50，此时满足low小于high，进行下一次的循环
+	}
+	a[low] = val;//移动完毕low和high必定相等，此时的数列排列顺序为13,38,49,65,50，low=high=3 于是使得49左边的数都比49小，49右边的数都比49大   
+	return low;
+}
