@@ -208,3 +208,137 @@ public:
 		//叶子节点=左子树叶子节点+右子树叶子节点
 		return _leaf_size(root->_left) + _leaf_size(root->_right);
 	}
+	
+
+
+	//求二叉树的高度
+	size_t height()
+	{
+		return _height(_root);
+	}
+	size_t _height(node* root)
+	{
+		//二叉树为空的时候，高度为0
+		if (root == NULL)return 0;
+		size_t left_height = _height(root->_left);
+		size_t right_height = _height(root->_right);
+		//二叉树非空时，高度为左子树和右子树中较高的一个
+		return left_height > right_height ? left_height + 1 : right_height + 1;
+	}
+	//求第K层的节点个数：
+	size_t get_k_level(size_t k)
+	{
+		return _get_k_level(_root, k);
+	}
+	size_t _get_k_level(node* root, size_t k)
+	{
+		//空树返回0
+		if (root == NULL)return 0;
+		//第一层只有一个节点
+		if (k == 1)return 1;
+		//注意这里为什么是k-1?  如果你需要求第二层的节点个数，则需要用第一层的根节点访问他的左子树和右子树的第一层的个数
+		return _get_k_level(root->_left, k - 1) + _get_k_level(root->_right, k - 1);
+	}
+
+	//层序遍历
+	void level_order()
+	{
+		queue<node *>q;
+		if (_root)
+			q.push(_root);
+		while (!q.empty())
+		{
+			node* front = q.front();
+			cout << front->_data << "  ";
+			q.pop();
+			if (front->_left)
+				q.push(front->_left);
+			if (front->_right)
+				q.push(front->_right);
+		}
+		cout << endl;
+	}
+	//判断二叉树是否为完全二叉树
+	bool is_complete_tree()
+	{
+		queue<node*>q;
+		if (_root)
+			q.push(_root);
+		bool flag = true;
+		while (!q.empty())
+		{
+			node* front = q.front();
+			q.pop();
+			if (front->_left)
+			{
+				if (flag == false)
+					return false;
+				q.push(front->_left);
+			}
+			else
+			{
+				flag = false;
+			}
+			if (front->_right)
+			{
+				if (flag == false)
+					return false;
+				q.push(front->_right);
+			}
+			else
+				flag = false;
+		}
+		return true;
+	}
+
+	//查找一个节点是否在一棵二叉树中
+	node* find(const T&x)
+	{
+		return _find(_root, x);
+	}
+	node* _find(node*root, const T& x)
+	{
+		if (root == NULL)return NULL;
+		if (root->_data == x)return root;
+
+		node* ret1 = _find(root->_left, x);
+		if (ret1)return ret1;
+
+		node* ret2 = _find(root->_data, x);
+		if (ret2)return ret2;
+
+		return NULL;
+	}
+
+protected:
+	node *_root;
+};
+
+
+//测试部分
+void test_binary_tree()
+{
+	int array[] = { 1, 2, 3, '#', '#', 4, 40, '#', '#', '#', 5, 6, '#', '#', '#' };
+	binary_tree<int> t(array, sizeof(array) / sizeof(int), '#');
+	t.prev_order();
+	t.prev_order_no_r();
+	t.in_order();
+	t.in_order_no_r();
+	t.post_order_no_r();
+	t.level_order();
+
+	cout << "size:" << t.size() << endl;
+	cout << "leaf_size:" << t.leaf_size() << endl;
+	cout << "height:" << t.height() << endl;
+	cout << "is_complete_tree:" << t.is_complete_tree() << endl;
+	cout << "k_level_size:" << t.get_k_level(4) << endl;
+
+	binary_tree<int> t1(t);
+	t1.prev_order_no_r();
+}
+
+int main(void)
+{
+	test_binary_tree();
+	system("pause");
+}
