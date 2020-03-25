@@ -128,3 +128,83 @@ public:
 		cout << root->_data << "  ";
 		_in_order(root->_right);
 	}
+	//非递归的中序遍历
+	void in_order_no_r()
+	{
+		node* cur = _root;
+		stack<node*>s;
+		while (cur || !s.empty())
+		{
+			while (cur)
+			{
+				s.push(cur);
+				cur = cur->_left;
+			}
+
+			node* top = s.top();
+			cout << top->_data << "  ";
+			s.pop();
+
+			cur = top->_right;
+		}
+		cout << endl;
+	}
+
+	//非递归的后序遍历
+	void post_order_no_r()
+	{
+		node* cur = _root;
+		node*prev = NULL;
+		stack<node*>s;
+		while (cur || !s.empty())
+		{
+			while (cur)
+			{
+				s.push(cur);
+				cur = cur->_left;
+			}
+			node* top = s.top();
+			if (top->_right == NULL || top->_right == prev)
+			{
+				cout << top->_data << "  ";
+				s.pop();
+				prev = top;
+			}
+			else
+			{
+				cur = top->_right;
+			}
+		}
+		cout << endl;
+	}
+
+	//求节点个数
+	int size()
+	{
+		size_t size = 0;
+		_size(_root, size);
+		return size;
+	}
+	void _size(node* root, size_t&size)
+	{
+		if (root == NULL)return;
+		_size(root->_left, size);
+		++size;
+		_size(root->_right, size);
+	}
+
+	//求叶子节点的个数
+	size_t leaf_size()
+	{
+		return _leaf_size(_root);
+	}
+	size_t _leaf_size(node*root)
+	{
+		//二叉树为空的时候
+		if (root == NULL)return 0;
+		//二叉树只有一个节点的时候
+		if (root->_left == NULL && root->_right == NULL)
+			return 1;
+		//叶子节点=左子树叶子节点+右子树叶子节点
+		return _leaf_size(root->_left) + _leaf_size(root->_right);
+	}
