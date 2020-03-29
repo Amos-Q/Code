@@ -62,3 +62,69 @@ void Dijkstra(int n, int v, int *dist, int *prev, int c[maxnum][maxnum])
 			}
 	}
 }
+// 查找从源点v到终点u的路径，并输出
+void searchPath(int *prev, int v, int u)
+{
+	int que[maxnum];
+	int tot = 1;
+	que[tot] = u;
+	tot++;
+	int tmp = prev[u];
+	while (tmp != v)
+	{
+		que[tot] = tmp;
+		tot++;
+		tmp = prev[tmp];
+	}
+	que[tot] = v;
+	for (int i = tot; i >= 1; --i)
+		if (i != 1)
+			cout << que[i] << " -> ";
+		else
+			cout << que[i] << endl;
+}
+
+int main()
+{
+	freopen("input.txt", "r", stdin);
+	// 各数组都从下标1开始
+
+	// 输入结点数
+	cin >> n;
+	// 输入路径数
+	cin >> line;
+	int p, q, len;          // 输入p, q两点及其路径长度
+
+	// 初始化c[][]为maxint
+	for (int i = 1; i <= n; ++i)
+		for (int j = 1; j <= n; ++j)
+			c[i][j] = maxint;
+
+	for (int i = 1; i <= line; ++i)
+	{
+		cin >> p >> q >> len;
+		if (len < c[p][q])       // 有重边
+		{
+			c[p][q] = len;      // p指向q
+			c[q][p] = len;      // q指向p，这样表示无向图
+		}
+	}
+
+	for (int i = 1; i <= n; ++i)
+		dist[i] = maxint;
+	for (int i = 1; i <= n; ++i)
+	{
+		for (int j = 1; j <= n; ++j)
+			printf("%8d", c[i][j]);
+		printf("\n");
+	}
+
+	Dijkstra(n, 1, dist, prev, c);
+
+	// 最短路径长度
+	cout << "源点到最后一个顶点的最短路径长度: " << dist[n] << endl;
+
+	// 路径
+	cout << "源点到最后一个顶点的路径为: ";
+	searchPath(prev, 1, n);
+}
