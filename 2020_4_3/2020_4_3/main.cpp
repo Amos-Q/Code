@@ -321,3 +321,67 @@ void add() {
 		}
 	} while (true);
 }
+void Add_choose() {
+	int k;
+	cin >> k;
+	switch (k) {
+	case 1:
+		add();
+		break;
+	case 2:
+		system("cls");
+		Main_show();
+		break;
+	case 0:
+		exit(0);
+	default:
+		cout << "输入非法!请重新输入:";
+		Add_choose();
+	}
+}
+void Add_show() {
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~1.添加学生信息~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~2.返回上级目录~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~0.退出管理系统~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "请输入您的选择:";
+	Add_choose();
+}
+void Select_choose() {
+	int k;
+	cin >> k;
+	switch (k) {
+	case 1:
+		system("cls");
+		Select_information();
+		break;
+	case 2:
+		system("cls");
+		Select_score();
+		break;
+	case 3:
+		system("cls");
+		Main_show();
+		break;
+	case 0:
+		exit(0);
+	default:
+		cout << "输入非法!请重新输入:";
+		Select_choose();
+	}
+}
+void Select_show() {
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~1.查询学生信息~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~2.查询学生成绩~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~3.返回上级目录~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~0.退出管理系统~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "请输入您的选择:";
+	Select_choose();
+}
