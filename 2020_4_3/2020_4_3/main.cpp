@@ -180,3 +180,144 @@ void Update() {
 		}
 	}
 }
+void Update_choose() {
+	int k;
+	cin >> k;
+	switch (k) {
+	case 1:
+		system("cls");
+		Update();
+		break;
+	case 2:
+		system("cls");
+		Main_show();
+		break;
+	case 0:
+		exit(0);
+	default:
+		cout << "输入非法,请重新输入:";
+		Update_choose();
+	}
+}
+void Update_show() {
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~1.修改学生信息~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~2.返回上级目录~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~0.退出管理系统~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "请输入您的选择:";
+	Update_choose();
+}
+void Select_information() {
+	cout << "学号\t姓名\t性别\t年龄\n";
+	for (int i = 0; i < s.length; i++) {
+		cout << s.stu[i].getSno() << "\t" << s.stu[i].getName() << "\t" << s.stu[i].getSex() << "\t" << s.stu[i].getAge() << endl;
+	}
+	char c;
+	cin >> c;
+	while (1) {
+		system("cls");
+		Select_show();
+	}
+}
+void Select_score() {
+	double sum1 = 0, sum2 = 0, sum3 = 0;
+	cout << "学号\t姓名\t数学\t英语\t计算机\t总分\n";
+	for (int i = 0; i < s.length; i++) {
+		cout << s.stu[i].getSno() << "\t" << s.stu[i].getName() << "\t" << s.stu[i].getMath() << "\t" << s.stu[i].getEnglish() << "\t" << s.stu[i].getComputer() << "\t" << s.stu[i].getMath() + s.stu[i].getEnglish() + s.stu[i].getComputer() << endl;
+		sum1 = sum1 + s.stu[i].getMath();
+		sum2 = sum2 + s.stu[i].getEnglish();
+		sum3 = sum3 + s.stu[i].getComputer();
+	}
+	if (s.length != 0) {
+		cout.precision(4);
+		cout << "\n平均分:\t\t" << sum1 / s.length << "\t" << sum2 / s.length << "\t" << sum3 / s.length << "\t" << (sum1 + sum2 + sum3) / s.length << endl;
+	}
+	char c;
+	cin >> c;
+	while (1) {
+		system("cls");
+		Select_show();
+	}
+}
+void add() {
+	bool flag = false;
+	system("cls");
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "请输入学号:";
+	int sno;
+	do {
+		cin >> sno;
+		for (int i = 0; i < s.length; i++) {
+			if (s.stu[i].getSno() == sno)
+				flag = true;
+		}
+		if (flag) {
+			flag = false;
+			cout << "该学号已存在!" << endl;
+			cout << "请重新输入学号:";
+		}
+		else {
+			s.stu[s.length].setSno(sno);
+			break;
+		}
+	} while (true);
+	cout << "请输入姓名:";
+	string name;
+	cin >> name;
+	s.stu[s.length].setName(name);
+	cout << "请输入性别";
+	string sex;
+	cin >> sex;
+	s.stu[s.length].setSex(sex);
+	cout << "请输入年龄:";
+	int age;
+	cin >> age;
+	s.stu[s.length].setAge(age);
+	cout << "请输入数学成绩:";
+	double math;
+	cin >> math;
+	s.stu[s.length].setMath(math);
+	cout << "请输入英语成绩:";
+	double english;
+	cin >> english;
+	s.stu[s.length].setEnglish(english);
+	cout << "请输入计算机成绩:";
+	double computer;
+	cin >> computer;
+	s.stu[s.length].setComputer(computer);
+	system("cls");
+	cout << "学号(" << sno << "),姓名(" << name << "),性别(" << sex << "),年龄(" << age << "),数学(" << math << "),英语(" << english << "),计算机(" << computer << ")" << endl << "确定要添加该学生?(Y or N)" << endl;
+	char t;
+	do {
+		cin >> t;
+		if (t == 'Y' || t == 'y') {
+			s.length++;
+			cout << "您要继续添加吗?(Y or N)" << endl;
+			char temp;
+			do {
+				cin >> temp;
+				if (temp == 'Y' || temp == 'y') {
+					system("cls");
+					add();
+				}
+				else if (temp == 'N' || temp == 'n') {
+					system("cls");
+					Main_show();
+				}
+				else {
+					cout << "输入非法,请重新输入:";
+				}
+			} while (true);
+		}
+		else if (t == 'N' || t == 'n') {
+			system("cls");
+			Add_show();
+		}
+		else {
+			cout << "输入非法,请重新输入:";
+		}
+	} while (true);
+}
