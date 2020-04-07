@@ -1,0 +1,8 @@
+﻿  test.cpp
+e:\product\code\2020_4_6\2020_4_6\test.cpp(54): error C2556: “void add(int,int)”: 重载函数与“int add(int,int)”只是在返回类型上不同
+  e:\product\code\2020_4_6\2020_4_6\test.cpp(48): note: 参见“add”的声明
+e:\product\code\2020_4_6\2020_4_6\test.cpp(53): error C2371: “add”: 重定义；不同的基类型
+  e:\product\code\2020_4_6\2020_4_6\test.cpp(48): note: 参见“add”的声明
+e:\product\code\2020_4_6\2020_4_6\test.cpp(60): error C2065: “add”: 未声明的标识符
+e:\product\code\2020_4_6\2020_4_6\test.cpp(60): error C2440: “初始化”: 无法从“int (__cdecl *)(int,int)”转换为“int”
+  e:\product\code\2020_4_6\2020_4_6\test.cpp(60): note: 没有使该转换得以执行的上下文
