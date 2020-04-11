@@ -42,3 +42,23 @@ struct Point
 		return x == B.x && y == B.y;
 	}
 };
+
+class Game;
+
+class Block
+{
+	friend class Game;                  //声明Game类为友元类
+private:
+	static string all_state[7][4];  //标记所有方块的状态
+	int id, dir;                     //id表示种类,dir表示方向
+public:
+	Block();
+	Point p;                        //标记4*4数组的左上角坐标
+	bool state[4][4];               //用4*4的数组标记自己的状态
+	static void State_Init();       //初始化所有方块的状态
+	void StateCpy();                //将自己的状态与id和dir对应
+	void Rotate();                  //旋转
+	void Show(bool);                //将方块在屏幕上输出
+};
+
+string Block::all_state[7][4];          //初始化静态变量
