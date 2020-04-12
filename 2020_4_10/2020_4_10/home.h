@@ -62,3 +62,33 @@ public:
 };
 
 string Block::all_state[7][4];          //初始化静态变量
+class Game
+{
+private:
+	static int level_up[6];             //各level对应的分数
+	static int score_up[5];             //消除各行对应要加的分数
+	static int tick_cnt[6];             //各level对应的cnt数
+	int level, score;
+public:
+	Block runB, nextB;
+	Game();
+	int GetTickCnt();                   //得到当前level的cnt数
+	void ShowFrame();                   //输出游戏框架
+	void CheckBoard();                  //检查键盘响应
+	bool AllSquare(int);                //检查xx行是否可消
+	void DropDown(int);                 //将xx行以上的全部下移一格
+	void CheckLine();                   //方块安放后检查是否有可消行
+	void PlaceOn();                     //方块安放好
+	void Update(int);                   //更新信息
+	void GetNext();                     //得到下一个方块
+	inline bool OutBoard(int, int);      //检查坐标是否出界
+	bool CanChange(int, int);            //检查是否可以发生这样的改变
+	bool ChangePos(int, int);            //检查并改变下落方块的位置
+	void Rotate();                      //旋转
+	void Begin();                       //游戏欢迎界面
+	void Over();                        //游戏结束界面
+};
+
+int Game::level_up[6] = { 0,80,180,290,410,666 };
+int Game::score_up[5] = { 0,10,30,60,100 };
+int Game::tick_cnt[6] = { 0,50,40,30,20,10 };
