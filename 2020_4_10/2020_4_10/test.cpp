@@ -71,3 +71,22 @@ Block::Block()
 	p = Point(4, 13);                    //初始化点p的位置
 	StateCpy();
 }
+void Block::StateCpy()
+{
+	for (int i = 0, add = 0; i < 4; i++, add++)
+		for (int j = 0; j < 4; j++)
+			state[i][j] = all_state[id][dir][i * 4 + j + add] == '1';   //给每个方块的状态赋值
+}
+
+void Block::Rotate()
+{
+	dir = (dir + 1) % 4;
+	StateCpy();
+}
+
+void Block::Show(bool info = false)           //info表示是否是信息栏,下同
+{
+	for (int i = 0; i < 4; i++)
+		for (int j = 0; j < 4; j++)
+			MagicShow(Point(p.x + i, p.y + j), state[i][j], info);
+}
