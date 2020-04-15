@@ -131,6 +131,54 @@ public:
 	{
 		cout << _year << "-" << _month << "-" << _day << endl;
 	}
+Date operator-(int day)
+{
+Date ret (*this);
+ret -= day;
+return ret;
+}
+   // 日期-=天数
+Date& operator-=(int day)
+{
+_day -= day;
+while(day <= 0)
+{
+--_month;
+if(_month == 0)
+{
+--_year;
+_month = 12;
+}
+_day += GetMothday(_year,_month);
+}
+return *this;
+}
+// 前置++
+Date& operator++()
+{
+*this += 1;
+return *this;
+}
+// 后置++
+Date operator++(int)
+{
+Date tmp(*this);
+*this += 1;
+return tmp;
+}
+// 后置--
+Date operator--(int)
+{
+Date tmp(*this);
+*this -= 1;
+return tmp;
+}
+// 前置--
+Date& operator--()
+{
+*this -= 1;
+return *this;
+}
 private:
 	int _year;
 	int _month;
