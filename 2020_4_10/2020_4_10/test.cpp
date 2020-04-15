@@ -158,3 +158,37 @@ void Game::Update(int flash_line_cnt)
 	if (level < 6 && score >= level_up[level])
 		PrintAt(Point(10, 14), ++level, 2);
 }
+
+void Game::CheckLine()
+{
+	vector<int> flash_line;                                 //用来储存要消去的行号
+	vector<int>::iterator it;
+	for (int i = 0; i < 4; i++)
+		if (AllSquare(i + runB.p.x))
+			flash_line.push_back(i + runB.p.x);
+	if (flash_line.empty())
+		return;
+	int flash_times = 5;
+	while (flash_times--)                                    //闪
+	{
+		for (it = flash_line.begin(); it != flash_line.end(); it++)
+			for (int j = 1; j < M - 1; j++)
+				MagicShow(Point(*it, j), flash_times & 1, true);
+		Sleep(60);
+	}
+	for (it = flash_line.begin(); it != flash_line.end(); it++)    //消去某行后，将上面的信息向下移动
+		DropDown(*it);
+	it = flash_line.end() - 1;
+	for (int i = 1; i <= *it; i++)
+		for (int j = 1; j < M - 1; j++)
+			MagicShow(Point(i, j), g[i][j] == square, true);     //更新要消去的最后一行上方的信息
+	Update(flash_line.size());
+	flash_line.clear();
+}
+void Game::PlaceOn()
+{
+	for (int i = 0; i < 4; i++)
+		for (int j = 0; j < 4; j++)
+			if (runB.state[i][j])
+				g[runB.p.x + i][runB.p.y + j] = square;
+}
