@@ -1,2 +1,7 @@
 ﻿  day.cpp
-  2020_4_13.vcxproj -> E:\Product\Code\2020_4_13\Debug\2020_4_13.exe
+  test.c
+e:\product\code\2020_4_13\2020_4_13\test.c(9): warning C4013: “system”未定义；假设外部返回 int
+  LINK : 没有找到 E:\Product\Code\2020_4_13\Debug\2020_4_13.exe 或上一个增量链接没有生成它；正在执行完全链接
+test.obj : error LNK2005: _main 已经在 day.obj 中定义
+Debug\test.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+E:\Product\Code\2020_4_13\Debug\2020_4_13.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

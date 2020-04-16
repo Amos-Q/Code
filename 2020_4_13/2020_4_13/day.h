@@ -149,7 +149,7 @@ if(_month == 0)
 --_year;
 _month = 12;
 }
-_day += GetMothday(_year,_month);
+_day += GetMonthDay(_year,_month);
 }
 return *this;
 }
