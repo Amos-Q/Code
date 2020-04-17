@@ -192,3 +192,44 @@ void Game::PlaceOn()
 			if (runB.state[i][j])
 				g[runB.p.x + i][runB.p.y + j] = square;
 }
+
+void Game::GetNext()
+{
+	runB = nextB;
+	runB.p = Point(1, 5);
+	nextB = Block();
+	nextB.Show(true);
+	runB.Show();
+}
+
+inline bool Game::OutBoard(int x, int y)
+{
+	return x <= 0 || x >= N - 1 || y <= 0 || y >= M - 1;
+}
+
+void Game::CheckBoard()
+{
+	char ch[2];
+	for (int i = 0; i < 2; i++)
+		if (kbhit())                                     //检测键盘是否按下
+		{
+			ch[i] = getch();                            //只能用getch函数接收
+			if (ch[0] != -32)
+			{
+				i--;
+				if (ch[0] == ' ')                        //按空格暂停游戏
+					getch();
+				continue;
+			}
+			if (i == 1)
+			{
+				switch (ch[1])
+				{
+				case 72:Rotate(); break;             //上
+				case 80:ChangePos(1, 0); break;       //下
+				case 75:ChangePos(0, -1); break;      //左
+				case 77:ChangePos(0, 1); break;       //右
+				}
+			}
+		}
+}
