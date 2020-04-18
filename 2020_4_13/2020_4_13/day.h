@@ -179,6 +179,25 @@ Date& operator--()
 *this -= 1;
 return *this;
 }
+ing operator-(const Date& d)
+{
+Date max = *this;
+Date min = d;
+ing flag = 1;
+if(*this < d)
+{
+flag = -1;
+max = d;
+min = *this;
+}
+int n = 0;
+while(min != max)
+{
+++min;
+++n;
+}
+return n*flag;
+}
 private:
 	int _year;
 	int _month;
