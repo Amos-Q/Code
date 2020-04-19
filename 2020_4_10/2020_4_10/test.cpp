@@ -233,3 +233,40 @@ void Game::CheckBoard()
 			}
 		}
 }
+
+void Game::CheckBoard()
+{
+	char ch[2];
+	for (int i = 0; i < 2; i++)
+		if (kbhit())                                     //检测键盘是否按下
+		{
+			ch[i] = getch();                            //只能用getch函数接收
+			if (ch[0] != -32)
+			{
+				i--;
+				if (ch[0] == ' ')                        //按空格暂停游戏
+					getch();
+				continue;
+			}
+			if (i == 1)
+			{
+				switch (ch[1])
+				{
+				case 72:Rotate(); break;             //上
+				case 80:ChangePos(1, 0); break;       //下
+				case 75:ChangePos(0, -1); break;      //左
+				case 77:ChangePos(0, 1); break;       //右
+				}
+			}
+		}
+}
+
+bool Game::CanChange(int dx = 0, int dy = 0)
+{
+	const int x = runB.p.x, y = runB.p.y;
+	for (int i = 0; i < 4; i++)
+		for (int j = 0; j < 4; j++)
+			if (runB.state[i][j] && (OutBoard(i + x + dx, j + y + dy) || g[i + x + dx][j + y + dy] == square))
+				return false;
+	return true;
+}
