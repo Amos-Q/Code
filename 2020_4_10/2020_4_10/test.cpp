@@ -270,3 +270,70 @@ bool Game::CanChange(int dx = 0, int dy = 0)
 				return false;
 	return true;
 }
+void Game::Rotate()
+{
+	runB.Rotate();
+	if (!CanChange())
+		for (int i = 0; i < 3; i++)
+			runB.Rotate();
+	runB.Show();
+}
+
+bool Game::ChangePos(int dx, int dy)
+{
+	if (!CanChange(dx, dy))
+		return false;
+	const int x = runB.p.x, y = runB.p.y;
+	if (dx == 1)                                     //处理最后那行的显示
+	{
+		for (int j = 0; j < 4; j++)
+			MagicShow(Point(x, y + j));
+		++runB.p;
+	}
+	else if (dy == 1)                                //+1
+	{
+		for (int i = 0; i < 4; i++)
+			MagicShow(Point(x + i, y));
+		runB.p++;
+	}
+	else if (dy == -1)                               //+2
+	{
+		for (int i = 0; i < 4; i++)
+			MagicShow(Point(x + i, y + 3));
+		runB.p--;
+	}
+	runB.Show();
+	return true;
+}
+
+void Game::Begin()
+{
+	ShowFrame();
+	nextB = Block();
+	GetNext();
+	int flash_times = 1000;
+	while (!kbhit() && flash_times--)
+	{
+		PrintAt(Point(9, 1), flash_times & 1 ? "                   " : " * * * * * * * * * ");
+		PrintAt(Point(10, 1), flash_times & 1 ? "  Anykey to start  " : "* Anykey to start *");
+		PrintAt(Point(11, 1), flash_times & 1 ? "                   " : " * * * * * * * * * ");
+		Sleep(100);
+	}
+	getch();                                        //anykey to start!
+	PrintAt(Point(9, 1), "                   ");
+	PrintAt(Point(10, 1), "                   ");
+	PrintAt(Point(11, 1), "                   ");
+}
+
+void Game::Over()
+{
+	int flash_times = 12;
+	while (flash_times--)
+	{
+		PrintAt(Point(9, 3), flash_times & 1 ? "             " : " * * * * * * ");
+		PrintAt(Point(10, 3), flash_times & 1 ? "  Game over  " : "* Game over *");
+		PrintAt(Point(11, 3), flash_times & 1 ? "             " : " * * * * * * ");
+		Sleep(200);
+	}
+	PrintAt(Point(21, 0), "");                        //把光标移到最后
+}
