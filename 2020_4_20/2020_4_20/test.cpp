@@ -1,5 +1,5 @@
-//#include <iostream>
-//using namespace std;
+#include <iostream>
+using namespace std;
 //
 //class Date
 //{
@@ -36,72 +36,72 @@
 //	int _year;
 //	int _month;
 //	int _day;
-//};
-//
-//class Sum {
-//public:
-//	Sum() {
-//		_sum += _i;
-//		++_i;
-//	}
-//
-//	static void Init()
-//	{
-//		_i = 1;
-//		_sum = 0;
-//	}
-//
-//	static int GetSum() {
-//		return _sum;
-//	}
-//private:
-//	static int _i;
-//	static int _sum;
-//};
-//int Sum::_i = 1;
-//int Sum::_sum = 0;
-//
-//class Solution {
-//public:
-//	int Sum_Solution(int n) {
-//		//Sum a[n];
-//		Sum::Init();
-//		Sum* p = new Sum[n];
-//		return Sum::GetSum();
-//	}
-//};
-//
-//int main()
-//{
-//	Solution st;
-//	cout << st.Sum_Solution(5) << endl;
-//	cout << st.Sum_Solution(5) << endl;
-//
-//
-//	/*Date d;
-//	Date a[10];
-//
-//	int i;
-//	int ai[10];*/
-//
-//	//Date d1(1, 2, 3);
-//	//Date d2 = 1;
-//	//Date d3 = {1,2};
-//	//Date d4 = { 1, 2, 3};
-//
-//	//// 突破类域访问的两种方式。编译可以知道到哪个域找+访问限定符是否可以访问
-//	//d1.f4();
-//	//Date::f4();
-//
-//	//cout << sizeof(long) << endl; // 1、验证  2、查官网
-//	//cout << sizeof(long long) << endl;
-//
-//	return 0;
-//}
+////};
+////
+class Sum {
+public:
+	Sum() {
+		_sum += _i;
+		++_i;
+	}
 
-//#include <iostream>
-//using namespace std;
-//
+	 static void Init()
+	{
+		_i = 1;
+		_sum = 0;
+	}
+
+	static int GetSum() {
+		return _sum;
+	}
+private:
+	static int _i;
+	static int _sum;
+};
+int Sum::_i = 1;
+int Sum::_sum = 0;
+
+class Solution {
+public:
+	int Sum_Solution(int n) {
+		//Sum a[n];
+		Sum::Init();
+		Sum* p = new Sum[n];
+		return Sum::GetSum();
+	}
+};
+
+int main()
+{
+	Solution st;
+	cout << st.Sum_Solution(5) << endl;
+	cout << st.Sum_Solution(5) << endl;
+
+
+	/*Date d;
+	Date a[10];
+
+	int i;
+	int ai[10];*/
+
+	//Date d1(1, 2, 3);
+	//Date d2 = 1;
+	//Date d3 = {1,2};
+	//Date d4 = { 1, 2, 3};
+
+	//// 突破类域访问的两种方式。编译可以知道到哪个域找+访问限定符是否可以访问
+	//d1.f4();
+	//Date::f4();
+
+	//cout << sizeof(long) << endl; // 1、验证  2、查官网
+	//cout << sizeof(long long) << endl;
+
+	return 0;
+}
+
+#include <iostream>
+using namespace std;
+
 //class Date
 //{
 //public:
@@ -133,7 +133,7 @@
 //	return 0;
 //}
 
-// 友元
+ //友元
 //#include <iostream>
 //using namespace std;
 //
@@ -166,9 +166,9 @@
 //
 //	return 0;
 //}
-
-#include <iostream>
-using namespace std;
+//
+//#include <iostream>
+//using namespace std;
 
 //class Date
 //{
@@ -231,49 +231,49 @@ using namespace std;
 //	return 0;
 //}
 
-class Time
-{
-	friend class Date;   // 声明日期类为时间类的友元类，则在日期类中就直接访问Time类中的私有成员变量
-public:
-	Time(int hour = 0, int minute = 0, int second = 0)
-		: _hour(hour)
-		, _minute(minute)
-		, _second(second)
-	{}
-
-private:
-	int _hour;
-	int _minute;
-	int _second;
-};
-
-class Date
-{
-public:
-	Date(int year = 1900, int month = 1, int day = 1)
-		: _year(year)
-		, _month(month)
-		, _day(day)
-	{
-		_t._hour = 1;
-	}
-
-	void SetTimeOfDate(int hour, int minute, int second)
-	{
-		// 直接访问时间类私有的成员变量
-		_t._hour = hour;
-		_t._minute = minute;
-		_t._second = second;
-	}
-
-private:
-	int _year;
-	int _month;
-	int _day;
-	Time _t;
-};
-
-int main()
-{
-	return 0;
-}
+//class Time
+//{
+//	friend class Date;   // 声明日期类为时间类的友元类，则在日期类中就直接访问Time类中的私有成员变量
+//public:
+//	Time(int hour = 0, int minute = 0, int second = 0)
+//		: _hour(hour)
+//		, _minute(minute)
+//		, _second(second)
+//	{}
+//
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//};
+//
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//		: _year(year)
+//		, _month(month)
+//		, _day(day)
+//	{
+//		_t._hour = 1;
+//	}
+//
+//	void SetTimeOfDate(int hour, int minute, int second)
+//	{
+//		// 直接访问时间类私有的成员变量
+//		_t._hour = hour;
+//		_t._minute = minute;
+//		_t._second = second;
+//	}
+//
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//	Time _t;
+//};
+//
+//int main()
+//{
+//	return 0;
+//}
