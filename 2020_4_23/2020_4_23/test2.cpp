@@ -134,24 +134,24 @@ using namespace std;
 // C  A  B  D
 // ~B ~A ~D ~C
 
-class Widget
-{
-public:
-	Widget()
-	{}
-
-	Widget(const Widget& w)
-	{
-		cout << "Widget(const Widget& w)" << endl;
-	}
-};
-
-Widget f(Widget u)
-{
-	Widget v(u);
-	Widget w = v;
-	return w;
-}
+//class Widget
+//{
+//public:
+//	Widget()
+//	{}
+//
+//	Widget(const Widget& w)
+//	{
+//		cout << "Widget(const Widget& w)" << endl;
+//	}
+//};
+//
+//Widget f(Widget u)
+//{
+//	Widget v(u);
+//	Widget w = v;
+//	return w;
+//}
 
 //void main(){
 //	Widget x;
@@ -160,7 +160,7 @@ Widget f(Widget u)
 //	int* p = nullptr;
 //	cout << sizeof(p) << endl;
 //}
-
+//
 //int main()
 //{
 //	// C 函数
@@ -172,7 +172,7 @@ Widget f(Widget u)
 //	// C++ 操作符
 //	//int* p2 = new int;
 //	int* p2 = new int(10); // 申请一个int4个字节空间，初始化成10
-//	int* p4 = new int[10]; // 申请10个int的40个字节空间
+//	int* p4 = new int[10](); // 申请10个int的40个字节空间
 //
 //	delete p2;
 //	delete[] p4;
@@ -184,52 +184,80 @@ Widget f(Widget u)
 // 1、对于上面内置类型，他们效果是一样的。
 // 2、对于自定义类型，效果就不一样。malloc只申请空间。new 申请空间+构造函数初始化
 // free只释放空间，delete 析构函数+释放空间
+//class A
+//{
+//public:
+//	A(){
+//		_a = 0;
+//		cout << "A()" << endl;
+//	}
+//
+//	~A()
+//	{
+//		cout << "~A()" << endl;
+//	}
+//private:
+//	int _a;
+//}; 
+//
+//class B
+//{
+//public:
+//	B(){
+//		_a = 0;
+//		cout << "B()" << endl;
+//	}
+//
+//	~B()
+//	{
+//		cout << "~B()" << endl;
+//	}
+//private:
+//	int _a;
+//};
+//
+////A a1;
+////B b1;
+//int main()
+//{
+//	// 内置类型
+//	int* p1 = new int;
+//	int* p2 = (int*)malloc(sizeof(int));
+//
+//	// 自定义类型
+//	A* p3 = (A*)malloc(sizeof(A)); // 申请空间
+//	A* p4 = new A;                 // 申请空间+构造函数初始化
+//
+//	free(p3);					  // 释放空间
+//	delete p4;                    // 析构函数+释放空间
+//
+//	return 0;
+//}
+
 class A
 {
 public:
-	A(){
-		_a = 0;
-		cout << "A()" << endl;
-	}
-
-	~A()
+	A(int a = 1, int b = 1)
 	{
-		cout << "~A()" << endl;
+		_a = a;
+		_b = b;
+	}
+	//A()
+	//	:_a(2)
+	//	, _b(3)
+	//{}
+	void p()
+	{
+		cout << _a << _b;
 	}
 private:
 	int _a;
-}; 
-
-class B
-{
-public:
-	B(){
-		_a = 0;
-		cout << "B()" << endl;
-	}
-
-	~B()
-	{
-		cout << "~B()" << endl;
-	}
-private:
-	int _a;
+	int _b;
 };
 
-//A a1;
-//B b1;
 int main()
 {
-	// 内置类型
-	int* p1 = new int;
-	int* p2 = (int*)malloc(sizeof(int));
-
-	// 自定义类型
-	A* p3 = (A*)malloc(sizeof(A)); // 申请空间
-	A* p4 = new A;                 // 申请空间+构造函数初始化
-
-	free(p3);					  // 释放空间
-	delete p4;                    // 析构函数+释放空间
-
+	A a;
+	a.p();
 	return 0;
 }
