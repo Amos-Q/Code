@@ -1,5 +1,7 @@
 #include <assert.h>
-//namespace bit
+#include <iostream>
+using namespace std;
+//namespace fxd
 //{
 //	class string
 //	{
@@ -40,7 +42,7 @@
 //}
 
 
-//namespace bit
+//namespace fxd
 //{
 //	// 面试题：实现一个简单的string  -> 深浅拷贝问题
 //	class string
@@ -147,7 +149,7 @@
 //}
 
 
-namespace bit
+namespace fxd
 {
 	// 实现一个支持增删查改的string
 	class string
