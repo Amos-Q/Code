@@ -157,3 +157,112 @@ void add(Contact *p)
 		cin >> c;
 	} while (c == 'y');
 }
+
+void list(Contact *p)
+{
+	clear();
+
+	int j = 0;
+
+	for (j = 0; j < i; j++)
+	{
+		p[j].print(j);
+	}
+}
+
+int findnum(string s, int *accumlate, Contact *p)
+{
+	int m = 0;
+	int j = 0;
+
+	for (m = 0; m < i; m++)
+	{
+		if (s == p[m].getname())
+		{
+			accumlate[j++] = m;
+		}
+	}
+	return j;
+}
+
+void seek(Contact *p)                                               //定义查找函数，通过姓名查找
+{
+	char c = 0;
+	do
+	{
+		clear();
+
+		int j = 0;
+		int temp = 0;
+		int accum = 0;
+		int a[20] = { 0 };
+		string name;
+
+		cout << "请输入你想查找的联系人的姓名：";
+		cin >> name;
+
+		accum = findnum(name, a, p);                              //调用findnum函数，并把找到几个联系人赋给accum
+
+		if (accum == 0)
+		{
+			cout << "此联系人不存在！" << endl;
+		}
+
+		else if (accum == 1)                                       //如果找到一个联系人，输出这个联系人的信息
+		{
+			temp = a[0];
+			p[temp].print(temp);
+		}
+
+		else if (accum > 1)                                        //找到不止一个联系人，输出全部联系人信息
+		{
+			cout << "有" << accum << "个联系人！" << endl;
+			for (j = 0; j < accum; j++)
+			{
+				temp = a[j];
+				p[temp].print(temp);
+			}
+		}
+		cout << "是否继续查找? (y/other) :";
+		__fpurge(stdin);
+		cin >> c;
+
+	} while (c == 'y');
+}
+
+void coverdata(int j, Contact *p)                                 //定义覆盖信息函数
+{
+	int m = 0;
+	char c = 0;
+	string name;
+	string ismale;
+	string tel;
+	string qq;
+	string address;
+	string remark;
+
+	cout << "是否删除该联系人？(y/n)";
+	__fpurge(stdin);
+	cin >> c;
+
+	if (c == 'y')
+	{
+		for (m = j; m < i; m++)
+		{
+			name = p[m + 1].getname();
+			p[m].setname(name);
+			ismale = p[m + 1].getmale();
+			p[m].setmale(ismale);
+			tel = p[m + 1].gettel();
+			p[m].settel(tel);
+			qq = p[m + 1].getqq();
+			p[m].setqq(qq);
+			address = p[m + 1].getaddress();
+			p[m].setaddress(address);
+			remark = p[m + 1].getremark();
+			p[m].setremark(remark);
+		}
+		i--;                                                        //将后一个的信息传给前一个
+		cout << "删除成功！" << endl;
+	}
+}
