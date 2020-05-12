@@ -266,3 +266,125 @@ void coverdata(int j, Contact *p)                                 //定义覆盖信息
 		cout << "删除成功！" << endl;
 	}
 }
+void mydelete(Contact *p)                                           //定义删除联系人函数
+{
+	char c = 0;
+	do
+	{
+		clear();
+
+		int j = 0;
+		int temp = 0;
+		int accum = 0;
+		int a[20] = { 0 };
+		string name;
+
+		cout << "请输入你想删除的联系人的姓名：";
+		cin >> name;
+
+		accum = findnum(name, a, p);                               //调用findnum函数，并把找到几个联系人赋给accum
+
+		if (accum == 0)
+		{
+			cout << "此联系人不存在！" << endl;
+		}
+
+		else if (accum == 1)
+		{
+			temp = a[0];
+			coverdata(temp, p);
+		}
+
+		else if (accum > 1)
+		{
+			cout << "有" << accum << "个联系人！" << endl;                    //如果找到不止一个联系人，输出这些联系人信息，让操作者选择要删除的联系人编号
+			for (j = 0; j < accum; j++)
+			{
+				temp = a[j];
+				p[temp].print(temp);
+			}
+
+			cout << "请输入要删的人的编号：";
+			cin >> temp;
+			coverdata(temp, p);
+		}
+
+		cout << "是否继续删除? (y/other) :";
+		__fpurge(stdin);
+		cin >> c;
+
+	} while (c == 'y');
+}
+
+void modify(int j, Contact *p)                                    //定义修改函数
+{
+	clear();
+	p[j].print(j);
+
+	int temp = 0;
+	string ch;
+
+	cout << endl;
+	cout << "1－－姓名" << endl;
+	cout << "2－－性别" << endl;
+	cout << "3－－电话" << endl;
+	cout << "4－－qq号" << endl;
+	cout << "5－－住址" << endl;
+	cout << "6－－备注" << endl;
+	cout << "请输入你要修改的项：" << endl;
+	cin >> temp;
+	cout << endl;
+
+	switch (temp)                                                    //用switch语句选择要修改的信息
+	{
+	case 1: {
+		cout << "请输入你要改成的姓名：";
+		cin >> ch;
+		p[j].setname(ch);
+		cout << "修改成功！" << endl;
+		break;
+	}
+
+	case 2: {
+		cout << "请输入你要改成的性别：";
+		cin >> ch;
+		p[j].setmale(ch);
+		cout << "修改成功！" << endl;
+		break;
+	}
+
+	case 3: {
+		cout << "请输入你要改成的电话：";
+		cin >> ch;
+		p[j].settel(ch);
+		cout << "修改成功！" << endl;
+		break;
+	}
+
+	case 4: {
+		cout << "请输入你要改成的qq号：";
+		cin >> ch;
+		p[j].setqq(ch);
+		cout << "修改成功！" << endl;
+		break;
+	}
+
+	case 5: {
+		cout << "请输入你要改成的住址：";
+		cin >> ch;
+		p[j].setaddress(ch);
+		cout << "修改成功！" << endl;
+		break;
+	}
+
+	case 6: {
+		cout << "请输入你要改成的备注：";
+		cin >> ch;
+		p[j].setremark(ch);
+		cout << "修改成功！" << endl;
+		break;
+	}
+
+	default:cout << "输入错误！" << endl;
+	}
+}
