@@ -388,3 +388,50 @@ void modify(int j, Contact *p)                                    //定义修改函数
 	default:cout << "输入错误！" << endl;
 	}
 }
+void revise(Contact *p)                                             //定义修改信息函数
+{
+	char c = 0;
+	do
+	{
+		clear();
+
+		int j = 0;
+		int temp = 0;
+		int accum = 0;
+		int a[20] = { 0 };
+		string name;
+
+		cout << "请输入你想修改的联系人的姓名：";
+		cin >> name;
+
+		accum = findnum(name, a, p);
+
+		if (accum == 0)
+		{
+			cout << "此联系人不存在！" << endl;
+		}
+
+		else if (accum == 1)
+		{
+			temp = a[0];
+			modify(temp, p);
+		}
+
+		else if (accum > 1)
+		{
+			cout << "有" << accum << "个联系人！" << endl;
+			for (j = 0; j < accum; j++)
+			{
+				temp = a[j];
+				p[temp].print(temp);                                //有不止一个联系人时输出所有联系人信息，让操作者选择要修改的联系人编号
+			}
+			cout << "请输入你要修改的人的编号：";
+			cin >> temp;
+			modify(temp, p);
+		}
+		cout << "是否继续修改? (y/other) :";
+		__fpurge(stdin);
+		cin >> c;
+
+	} while (c == 'y');
+}
