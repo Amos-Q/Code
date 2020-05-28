@@ -83,3 +83,36 @@ Point21::Point21()
 	}
 	cout << "游戏开始" << endl << endl;
 }
+
+//洗牌，通过产生随机数，交换随机数对应位置的牌和当前位置的牌
+void Point21::Shuffle()
+{
+	srand((unsigned)time(NULL));	//通过调用时间函数初始化随机数 
+	for (int nowPos = 51; nowPos > 0; nowPos--)
+	{
+		int pos = rand() % (nowPos + 1);	//产生0~nowPos之间的随机数
+
+		Card temp;		//定义一个临时变量用于交换牌
+		temp = PK[pos];
+		PK[pos] = PK[nowPos];
+		PK[nowPos] = temp;
+	}
+}
+//定义返回第一手牌的总分值 的函数 
+int Point21::GetTotalScore(Card gamer[21], int n)
+{
+	int pos;
+	int totalScore = 0;
+	for (pos = 0; pos < n; pos++)	//循环求最大分值(A的分值为11)
+	{
+		if (gamer[pos].num == A) totalScore += 11;	//A的分值为11
+		else if (gamer[pos].num > ten)totalScore += 10;	//J,Q,K的分值为10
+		else totalScore += (int)gamer[pos].num;	//TWO~TEN分值为2~10
+	}
+	//分值大于21时，将A的分值改为1
+	for (pos = 0; totalScore > 21 && pos < n; pos++)
+	{
+		if (gamer[pos].num == A) totalScore -= 10;
+	}
+	return totalScore;
+}
