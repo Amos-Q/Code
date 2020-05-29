@@ -116,3 +116,48 @@ int Point21::GetTotalScore(Card gamer[21], int n)
 	}
 	return totalScore;
 }
+void Point21::ShowStatus(int num, bool hideFirstCard)
+/*当num=0时，显示庄家当前状态，当num>0,显示第num个玩家的当前状态，
+当hideFirstCard为真时，将隐藏首张扑克牌与总分，否则将显示首张牌与总分*/
+
+
+{
+
+	cout << endl << name[num] << ":";	//显示庄家或玩家姓名
+
+	//根据庄家的状态隐藏或显示庄家首张牌的花色
+	if (hideFirstCard)cout << "<**庄家首张牌被隐藏**>";//隐藏首张牌
+	else if (gamers[num][0].shape == clubs) cout << "梅花";
+	else if (gamers[num][0].shape == diamonds) cout << "方块";
+	else if (gamers[num][0].shape == hearts) cout << "红桃";
+	else if (gamers[num][0].shape == spades) cout << "黑桃";
+	//输出庄家首张牌的面值
+	if (hideFirstCard)  cout << "";
+	else if (gamers[num][0].num == A) cout << "A ";	//A表示A
+	else if (gamers[num][0].num == J) cout << "J ";
+	else if (gamers[num][0].num == Q) cout << "Q ";
+	else if (gamers[num][0].num == K) cout << "K ";
+	else cout << (int)gamers[num][0].num;
+	for (int i = 1; i < numcards[num]; i++)
+	{
+		if (gamers[num][i].shape == clubs) cout << "梅花";
+
+		else if (gamers[num][i].shape == diamonds) cout << "方块";
+
+		else if (gamers[num][i].shape == hearts) cout << "红桃";
+
+		else if (gamers[num][i].shape == spades) cout << "黑桃";
+
+		//输出面值
+		if (gamers[num][i].num == A) cout << "A";
+		else if (gamers[num][i].num == J) cout << "J";
+		else if (gamers[num][i].num == Q) cout << "Q";
+		else if (gamers[num][i].num == K) cout << "K";
+		else cout << (int)gamers[num][i].num;
+	}
+	if (!hideFirstCard)
+		cout << "   总分值" << GetTotalScore(gamers[num], numcards[num]);
+	cout << endl;
+	if (GetTotalScore(gamers[num], numcards[num]) > 21)
+		cout << endl << name[num] << "引爆(超过21点啦 ！ 结束啦)!" << endl;
+}
