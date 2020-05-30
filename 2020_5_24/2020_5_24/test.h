@@ -161,3 +161,84 @@ void Point21::ShowStatus(int num, bool hideFirstCard)
 	if (GetTotalScore(gamers[num], numcards[num]) > 21)
 		cout << endl << name[num] << "引爆(超过21点啦 ！ 结束啦)!" << endl;
 }
+void Point21::Game()
+{
+	Shuffle();	//洗牌
+	int i, j;
+	//为庄家发两张牌
+	for (i = 0; i < 2; i++)
+		gamers[0][numcards[0]++] = FirstCard();
+
+	ShowStatus(0, true);	//显示庄家状态，隐藏首张牌与总分
+	//向各玩家发牌并显示
+	for (i = 1; i <= numgamer; i++)
+	{
+		for (j = 0; j < 2; j++)
+			gamers[i][numcards[i]++] = FirstCard();
+		ShowStatus(i);
+	}
+	cout << endl;
+	//依次向各玩家发额外的牌
+	for (i = 1; i <= numgamer; i++)
+	{
+		char p;
+		cout << endl << name[i] << ",你还想再要一张牌吗?如果要请输入1,不要请输入0:";
+		cin >> p;
+		//玩家选择再要一张牌,如果玩家没有引爆则继续发牌
+		//switch(p)
+		//{
+		while (p != '1' && p != '0')
+		{
+			cout << "你的输入不正确，请重新输入。" << endl;
+			cout << name[i] << ",你还想再要一张牌吗?如果要请输入1,不要请输入0:";
+			cin >> p;
+		}
+
+		while (GetTotalScore(gamers[i], numcards[i]) <= 21 && p == '1')
+		{
+			gamers[i][numcards[i]++] = FirstCard();
+			ShowStatus(i);
+			//玩家引爆则跳出循环
+			if (GetTotalScore(gamers[i], numcards[i]) > 21) break;
+			cout << endl << name[i] << ",你想再要一张牌吗?如果要请输入1,不要请输入0:";
+			cin >> p;
+		}
+		//}
+	}
+	ShowStatus(0);	//显示庄家
+	//庄家总分小于等于16，必须再拿牌
+	while (GetTotalScore(gamers[0], numcards[0]) <= 16)
+	{
+		gamers[0][numcards[0]++] = FirstCard();	//为庄家发1张牌
+		ShowStatus(0);	//显示庄家
+	}
+	cout << endl;
+	//庄家引爆，没有引爆的所有人赢
+	if (GetTotalScore(gamers[0], numcards[0]) > 21)
+	{
+		for (i = 1; i <= numgamer; i++)
+		{	//依次查看每位玩家
+			if (GetTotalScore(gamers[i], numcards[i]) <= 21)
+				cout << name[i] << ",恭喜你，庄家引爆，而你没有超过21点，你赢了！" << endl;//玩家没有引爆
+			else cout << name[i] << ",唉,可惜超过21点了，打了平局！" << endl;//玩家引爆
+		}
+	}
+	else
+	{//庄家没有引爆,依次查看每位玩家
+		for (i = 1; i <= numgamer; i++)
+		{//总分比庄家大
+			if (GetTotalScore(gamers[i], numcards[i]) <= 21 && GetTotalScore(gamers[i], numcards[i]) > GetTotalScore(gamers[0], numcards[0]))
+			{//玩家未引爆，且总分比庄家大，玩家赢
+				cout << name[i] << ",恭喜你，你最接近21点，你赢了!" << endl;
+			}
+			else if (GetTotalScore(gamers[i], numcards[i]) == GetTotalScore(gamers[0], numcards[0]))
+			{//玩家总分与庄家相等，平局
+				cout << name[i] << ",唉，可惜了你与庄家总分相同，打了平局!" << endl;
+			}
+			else
+			{//玩家引爆或总分比庄家小，玩家输
+				cout << name[i] << ",对不起，你输了!（爆了或者庄家更接近21点）" << endl;
+			}
+		}
+	}
+}
