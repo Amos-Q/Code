@@ -1,0 +1,8 @@
+﻿  test2.cpp
+e:\product\code\2020_6_21\2020_6_21\test2.cpp(81): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\2020_6_21\2020_6_21\test2.cpp(86): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\2020_6_21\2020_6_21\test2.cpp(99): warning C4244: “初始化”: 从“double”转换到“__int64”，可能丢失数据
+e:\product\code\2020_6_21\2020_6_21\test2.cpp(114): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\2020_6_21\2020_6_21\test2.cpp(116): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\2020_6_21\2020_6_21\test2.cpp(141): warning C4018: “<”: 有符号/无符号不匹配
+  2020_6_21.vcxproj -> E:\Product\Code\2020_6_21\Debug\2020_6_21.exe
