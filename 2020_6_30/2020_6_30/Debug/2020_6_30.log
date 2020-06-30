@@ -1,0 +1,5 @@
+﻿  test.cpp
+e:\product\code\2020_6_30\2020_6_30\test.cpp(74): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\2020_6_30\2020_6_30\test.cpp(100): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\2020_6_30\2020_6_30\test.cpp(70): warning C4715: “Sum”: 不是所有的控件路径都返回值
+  2020_6_30.vcxproj -> E:\Product\Code\2020_6_30\Debug\2020_6_30.exe
