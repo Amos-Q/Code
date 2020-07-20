@@ -1,0 +1,4 @@
+﻿  test.cpp
+e:\product\code\2020_7_20\2020_7_20\test.cpp(72): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+e:\product\code\2020_7_20\2020_7_20\test.cpp(62): warning C4715: “Sum”: 不是所有的控件路径都返回值
+  2020_7_20.vcxproj -> E:\Product\Code\2020_7_20\Debug\2020_7_20.exe
