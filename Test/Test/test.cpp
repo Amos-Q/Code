@@ -427,18 +427,64 @@ using namespace std;
 //	strcpy(str, "hello");
 //	printf(str);
 //}
-void Test(void)
+//void Test(void)
+//{
+//	char *str = (char *)malloc(100);
+//	strcpy(str, "hello");
+//	free(str);
+//	if (str != NULL)
+//	{
+//		strcpy(str, "world");
+//		printf(str);
+//	}
+//}
+//int main()
+//{
+//	Test();
+//}
+
+//struct S
+//{
+//	char a[15];
+//	int i[2];
+//};
+//union un
+//{
+//	char c;
+//	int i;
+//};
+//int main()
+//{
+//	//cout << sizeof(S) << endl;
+//	un un;
+//	//printf("%d\n", &(un.i));
+//	//printf("%d\n", &(un.c));
+//	un.i = 0x11223344;
+//	un.c = 0x55;
+//	printf("%x\n", un.i);
+//}
+
+int check_sys()
 {
-	char *str = (char *)malloc(100);
-	strcpy(str, "hello");
-	free(str);
-	if (str != NULL)
+	union un
 	{
-		strcpy(str, "world");
-		printf(str);
-	}
+		char c;
+		int i;
+	}num;
+	num.i = 1;
+	return num.c;
 }
 int main()
 {
-	Test();
+	int ret = check_sys();
+	if (ret == 1)
+	{
+		printf("本机为小端模式\n");
+	}
+	else
+	{
+		printf("本机为大端模式\n");
+	}
+	system("pause");
+	return 0;
 }
