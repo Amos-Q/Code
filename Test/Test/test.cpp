@@ -2,11 +2,11 @@
 //#pragma once
 //#ifdef _________TEST________
 #include <iostream>
-#include <string.h>
+//#include <string.h>
 #include <vector>
 #include <map>
-#include <string>
-#include <stdio.h>
+//#include <string>
+#include <assert.h>
 //#endif _________TEST________
 using namespace std;
 //int Fun(char *s1, char s2)
@@ -464,27 +464,229 @@ using namespace std;
 //	printf("%x\n", un.i);
 //}
 
-int check_sys()
-{
-	union un
-	{
-		char c;
-		int i;
-	}num;
-	num.i = 1;
-	return num.c;
-}
-int main()
-{
-	int ret = check_sys();
-	if (ret == 1)
-	{
-		printf("本机为小端模式\n");
-	}
-	else
-	{
-		printf("本机为大端模式\n");
-	}
-	system("pause");
-	return 0;
-}
+//int check_sys()
+//{
+//	union un
+//	{
+//		char c;
+//		int i;
+//	}num;
+//	num.i = 1;
+//	return num.c;
+//}
+//int main()
+//{
+//	int ret = check_sys();
+//	if (ret == 1)
+//	{
+//		printf("本机为小端模式\n");
+//	}
+//	else
+//	{
+//		printf("本机为大端模式\n");
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+//void TestFunc(int a = 10)
+//{
+//	cout << "void TestFunc(int)" << endl;
+//}
+//void TestFunc(int a)
+//{
+//	cout << "void TestFunc(int)" << endl;
+//}
+//
+//int main()
+//{
+//	TestFunc(10);
+//}
+
+//class Person
+//{
+//public:
+//	void PrintPersonInfo();
+//private:
+//	char _name[20];
+//	char _gender[3];
+//	int _age;
+//};
+//// 这里需要指定PrintPersonInfo是属于Person这个类域
+//void PrintPersonInfo()
+//{
+//	cout << _name << " " << _gender << " " << _age << endl;
+//}
+//class A1 {
+//public:
+//	void f1() {}
+//private:
+//	int _a;
+//};
+//// 类中仅有成员函数
+//class A2 {
+//public:
+//	void f2() {}
+//};
+//// 类中什么都没有---空类
+//class A3
+//{};
+//int main()
+//{
+//	cout << sizeof(A1) << sizeof(A2) << sizeof(A3) << endl;
+//}
+
+//class A
+//{
+//public:
+//	void PrintA()
+//	{
+//		cout << _a << endl;
+//	}
+//	void Show()
+//	{
+//		cout << "Show()" << endl;
+//	}
+//private:
+//	int _a;
+//};
+//
+//int main()
+//{
+//	A* p = NULL;
+//	p->PrintA();
+//	p->Show();
+//}
+
+//class Time
+//{
+//public:
+//	Time()
+//	{
+//		cout << "Time()" << endl;
+//		_hour = 0;
+//		_minute = 0;
+//		_second = 0;
+//	}
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//};
+//class Date
+//{
+//private:
+//	// 基本类型(内置类型)
+//	int _year;
+//	int _month;
+//	int _day;
+//	// 自定义类型
+//	Time _t;
+//};
+//int main()
+//{
+//	Date d;
+//	return 0;
+//}
+
+//class Date
+//{
+//public:
+//	void Display()
+//	{
+//		cout << "Display ()" << endl;
+//		cout << "year:" << _year << endl;
+//		cout << "month:" << _month << endl;
+//		cout << "day:" << _day << endl << endl;
+//	}
+//	void Display() const
+//	{
+//		cout << "Display () const" << endl;
+//		cout << "year:" << _year << endl;
+//		cout << "month:" << _month << endl;
+//		cout << "day:" << _day << endl << endl;
+//	}
+//private:
+//	int _year; // 年
+//	int _month; // 月
+//	int _day; // 日
+//};
+//void Test()
+//{
+//	Date d1;
+//	d1.Display();
+//	const Date d2;
+//	d2.Display();
+//}
+//int main()
+//{
+//	Test();
+//}
+
+//class A
+//{
+//public:
+//	A(int a)
+//		:_a1(a)
+//		, _a2(_a1)
+//	{}
+//	void Print() {
+//		cout << _a1 << " " << _a2 << endl;
+//	}
+//private:
+//	int _a2;
+//	int _a1;
+//};
+//
+//int main() 
+//{
+//	A aa(1);
+//	aa.Print();
+//}
+
+//
+//class A
+//{
+//public:
+//	A() { ++_scount; }
+//	A(const A& t) { ++_scount; }
+//	static int GetACount() { return _scount; }
+//	void test() { cout << GetACount() << endl; }
+//	static void test2() { test(); }
+//
+//private:
+//	static int _scount;
+//};
+//
+//int A::_scount = 0;
+//
+//void TestA()
+//{
+//	cout << A::GetACount() << endl;
+//	A a1, a2;
+//	A a3(a1);
+//	cout << A::GetACount() << endl;
+//	a3.test2();
+//}
+//int main()
+//{
+//	TestA();
+//}
+
+
+//template<class T>
+//void swap(T&l, T&r)
+//{
+//
+//}
+
+//
+//int main()
+//{
+//	vector<int> v;
+//	v.reserve(10);
+//	for (int i = 0; i < 10; i++)
+//	{
+//		cin >> v[i];
+//	}
+//}
