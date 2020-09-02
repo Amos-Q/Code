@@ -1,0 +1,4 @@
+﻿  test.cpp
+e:\product\code\2020_9_2\2020_9_2\test.cpp(43): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\2020_9_2\2020_9_2\test.cpp(48): warning C4018: “<”: 有符号/无符号不匹配
+  2020_9_2.vcxproj -> E:\Product\Code\2020_9_2\Debug\2020_9_2.exe
