@@ -1,2 +1,8 @@
 ﻿  test3.cpp
+e:\product\code\test\test\test3.cpp(329): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\test\test\test3.cpp(330): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\test\test\test3.cpp(335): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\test\test\test3.cpp(335): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+e:\product\code\test\test\test3.cpp(348): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\test\test\test3.cpp(349): warning C4018: “>”: 有符号/无符号不匹配
   Test.vcxproj -> E:\Product\Code\Test\Debug\Test.exe
