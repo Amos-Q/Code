@@ -1,3 +1,8 @@
-﻿  test4.cpp
-e:\product\code\test\test\test4.cpp(11): warning C4018: “<”: 有符号/无符号不匹配
+﻿  test5.cpp
+e:\product\code\test\test\test5.cpp(45): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\test\test\test5.cpp(49): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\test\test\test5.cpp(71): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\test\test\test5.cpp(99): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\test\test\test5.cpp(100): warning C4018: “<”: 有符号/无符号不匹配
+e:\product\code\test\test\test5.cpp(109): warning C4018: “<”: 有符号/无符号不匹配
   Test.vcxproj -> E:\Product\Code\Test\Debug\Test.exe
